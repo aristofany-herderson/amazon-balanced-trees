@@ -1,0 +1,136 @@
+Amazon Engineering Challenge — Árvores Balanceadas (AVL × Rubro-Negra)
+
+══ Amazon Logistics · Árvore AVL ══  n=0  h=0
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 1
+  IDs para inserir (separados por espaço ou vírgula): 10 20 30 40 50 25
+  ✔ 10 inserido (rotações +0)
+  ✔ 20 inserido (rotações +0)
+  ✔ 30 inserido (rotações +1)
+  ✔ 40 inserido (rotações +0)
+  ✔ 50 inserido (rotações +1)
+  ✔ 25 inserido (rotações +2)
+
+══ Amazon Logistics · Árvore AVL ══  n=6  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 1
+  IDs para inserir (separados por espaço ou vírgula): 30
+  ✖ 30 já existe — duplicatas são ignoradas
+
+══ Amazon Logistics · Árvore AVL ══  n=6  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 5
+  Legenda: h = altura do nó, fb = h(esq) - h(dir) · E/D = filho esquerdo/direito
+
+30 (h=3, fb=0)
+├── E: 20 (h=2, fb=0)
+│   ├── E: 10 (h=1, fb=0)
+│   └── D: 25 (h=1, fb=0)
+└── D: 40 (h=2, fb=-1)
+    ├── E: ·
+    └── D: 50 (h=1, fb=0)
+
+══ Amazon Logistics · Árvore AVL ══  n=6  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 3
+  IDs para buscar (separados por espaço ou vírgula): 25 99
+  ✔ 25 encontrado (3 nó(s) visitado(s))
+  ✖ 99 não encontrado (3 nó(s) visitado(s))
+
+══ Amazon Logistics · Árvore AVL ══  n=6  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 2
+  IDs para remover (separados por espaço ou vírgula): 40 99
+  ✔ 40 removido (rotações +0)
+  ✖ 99 não encontrado — árvore inalterada
+
+══ Amazon Logistics · Árvore AVL ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 5
+  Legenda: h = altura do nó, fb = h(esq) - h(dir) · E/D = filho esquerdo/direito
+
+30 (h=3, fb=+1)
+├── E: 20 (h=2, fb=0)
+│   ├── E: 10 (h=1, fb=0)
+│   └── D: 25 (h=1, fb=0)
+└── D: 50 (h=1, fb=0)
+
+══ Amazon Logistics · Árvore AVL ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 4
+  Em ordem (5 elementos):
+  10 20 25 30 50
+
+══ Amazon Logistics · Árvore AVL ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 8
+  ✔ Todas as propriedades da árvore AVL foram verificadas.
+    |fb| <= 1 em todos os nós · alturas consistentes · ordem BST
+
+══ Amazon Logistics · Árvore AVL ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 7
+  Estrutura ............ AVL
+  Elementos ............ 5
+  Altura ............... 3
+  Altura mínima teórica  3
+  Limite teórico ....... 4.04  (1,44·log2(n+2))
+  Rotações ............. 4 (esquerda 3, direita 1)
+  Casos de balanceamento:
+    · RL - rotação dupla à esquerda: 1
+    · RR - rotação simples à esquerda: 2
+
+══ Amazon Logistics · Árvore AVL ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 0
+Até logo!

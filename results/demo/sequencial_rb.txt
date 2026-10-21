@@ -1,0 +1,70 @@
+Amazon Engineering Challenge — Árvores Balanceadas (AVL × Rubro-Negra)
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=0  h=0
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 6
+  Quantidade de IDs: 15
+  Ordem (1 crescente, 2 decrescente, 3 aleatória): 1
+  ID inicial [1]: 1
+  ✔ 15 inserido(s), 0 duplicado(s) ignorado(s) (rotações +9, recolorações +45)
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=15  h=6
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 5
+  Legenda: [R] = rubro (vermelho), [N] = negro (preto) · E/D = filho esquerdo/direito
+
+4 [N]
+├── E: 2 [N]
+│   ├── E: 1 [N]
+│   └── D: 3 [N]
+└── D: 8 [R]
+    ├── E: 6 [N]
+    │   ├── E: 5 [N]
+    │   └── D: 7 [N]
+    └── D: 10 [N]
+        ├── E: 9 [N]
+        └── D: 12 [R]
+            ├── E: 11 [N]
+            └── D: 14 [N]
+                ├── E: 13 [R]
+                └── D: 15 [R]
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=15  h=6
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 7
+  Estrutura ............ Rubro-Negra
+  Elementos ............ 15
+  Altura ............... 6
+  Altura mínima teórica  4
+  Altura negra ......... 3
+  Limite teórico ....... 8.00  (2·log2(n+1))
+  Rotações ............. 9 (esquerda 9, direita 0)
+  Recolorações ......... 45
+  Casos de balanceamento:
+    · Inserção caso 1 - tio vermelho (recoloração): 8
+    · Inserção caso 3 - linha (rotação no avô): 9
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=15  h=6
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 0
+Até logo!

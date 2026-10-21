@@ -1,0 +1,29 @@
+Testes automatizados — AVL e Rubro-Negra
+  ✔ AVL · árvore vazia
+  ✔ Rubro-Negra · árvore vazia
+  ✔ AVL · um único elemento
+  ✔ Rubro-Negra · um único elemento
+  ✔ AVL · valores repetidos
+  ✔ Rubro-Negra · valores repetidos
+  ✔ AVL · inserção crescente (1..1000)
+  ✔ Rubro-Negra · inserção crescente (1..1000)
+  ✔ AVL · inserção decrescente (1000..1)
+  ✔ Rubro-Negra · inserção decrescente (1000..1)
+  ✔ AVL · inserção não ordenada (1000)
+  ✔ Rubro-Negra · inserção não ordenada (1000)
+  ✔ AVL · busca existente e inexistente
+  ✔ Rubro-Negra · busca existente e inexistente
+  ✔ AVL · remoção: folha, 1 filho, 2 filhos, raiz
+  ✔ Rubro-Negra · remoção: folha, 1 filho, 2 filhos, raiz
+  ✔ AVL · remoção de inexistentes
+  ✔ Rubro-Negra · remoção de inexistentes
+  ✔ AVL · remoção de todos os elementos
+  ✔ Rubro-Negra · remoção de todos os elementos
+  ✔ AVL · 6000 operações aleatórias × std::set
+  ✔ Rubro-Negra · 6000 operações aleatórias × std::set
+  ✔ AVL · esvaziar e reutilizar
+  ✔ Rubro-Negra · esvaziar e reutilizar
+  ✔ AVL · rotação dupla (LR)
+  ✔ Rubro-Negra · caso tio vermelho (só recoloração)
+
+30314 verificações, 0 falha(s)

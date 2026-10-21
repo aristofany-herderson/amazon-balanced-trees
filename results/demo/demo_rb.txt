@@ -1,0 +1,139 @@
+Amazon Engineering Challenge — Árvores Balanceadas (AVL × Rubro-Negra)
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=0  h=0
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 1
+  IDs para inserir (separados por espaço ou vírgula): 10 20 30 40 50 25
+  ✔ 10 inserido (rotações +0, recolorações +1)
+  ✔ 20 inserido (rotações +0, recolorações +0)
+  ✔ 30 inserido (rotações +1, recolorações +2)
+  ✔ 40 inserido (rotações +0, recolorações +4)
+  ✔ 50 inserido (rotações +1, recolorações +2)
+  ✔ 25 inserido (rotações +0, recolorações +3)
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=6  h=4
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 1
+  IDs para inserir (separados por espaço ou vírgula): 30
+  ✖ 30 já existe — duplicatas são ignoradas
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=6  h=4
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 5
+  Legenda: [R] = rubro (vermelho), [N] = negro (preto) · E/D = filho esquerdo/direito
+
+20 [N]
+├── E: 10 [N]
+└── D: 40 [R]
+    ├── E: 30 [N]
+    │   ├── E: 25 [R]
+    │   └── D: ·
+    └── D: 50 [N]
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=6  h=4
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 3
+  IDs para buscar (separados por espaço ou vírgula): 25 99
+  ✔ 25 encontrado (4 nó(s) visitado(s))
+  ✖ 99 não encontrado (3 nó(s) visitado(s))
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=6  h=4
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 2
+  IDs para remover (separados por espaço ou vírgula): 40 99
+  ✔ 40 removido (rotações +1, recolorações +4)
+  ✖ 99 não encontrado — árvore inalterada
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 5
+  Legenda: [R] = rubro (vermelho), [N] = negro (preto) · E/D = filho esquerdo/direito
+
+20 [N]
+├── E: 10 [N]
+└── D: 30 [R]
+    ├── E: 25 [N]
+    └── D: 50 [N]
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 4
+  Em ordem (5 elementos):
+  10 20 25 30 50
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 8
+  ✔ Todas as propriedades da árvore Rubro-Negra foram verificadas.
+    raiz negra · sem vermelho com filho vermelho · mesma altura negra · ordem BST
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 7
+  Estrutura ............ Rubro-Negra
+  Elementos ............ 5
+  Altura ............... 3
+  Altura mínima teórica  3
+  Altura negra ......... 2
+  Limite teórico ....... 5.17  (2·log2(n+1))
+  Rotações ............. 3 (esquerda 2, direita 1)
+  Recolorações ......... 16
+  Casos de balanceamento:
+    · Inserção caso 1 - tio vermelho (recoloração): 2
+    · Inserção caso 3 - linha (rotação no avô): 2
+    · Remoção caso 4 - sobrinho distante vermelho: 1
+
+══ Amazon Logistics · Árvore Rubro-Negra ══  n=5  h=3
+  1  Inserir ID(s)              6  Gerar lote de IDs
+  2  Remover ID(s)              7  Estatísticas
+  3  Buscar ID(s)               8  Verificar propriedades
+  4  Percurso em ordem          9  Esvaziar árvore
+  5  Visualizar estrutura      10  Trocar tipo de árvore
+  0  Sair
+> 0
+Até logo!

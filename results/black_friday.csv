@@ -1,0 +1,3 @@
+arvore,operacoes,tamanho_final,altura,rotacoes,recoloracoes,alturas_recalculadas,visitas_media_busca,tempo_ms,valida
+AVL,300000,90493,18,143683,0,3081971,14.487,39.709,sim
+Rubro-Negra,300000,90493,27,146115,789953,0,15.343,27.695,sim

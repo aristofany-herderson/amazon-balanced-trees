@@ -1,0 +1,46 @@
+Análise comparativa — mesmos dados e mesma sequência para as duas árvores
+semente = 2026 · tempos = mediana de 5 execuções
+
+Altura de uma BST sem balanceamento (referência do problema):
+  n=  1000  crescente    altura BST =   1000   mínimo possível = 10
+  n=  1000  decrescente  altura BST =   1000   mínimo possível = 10
+  n=  1000  aleatória    altura BST =     20   mínimo possível = 10
+  n= 10000  crescente    altura BST =  10000   mínimo possível = 14
+  n= 10000  decrescente  altura BST =  10000   mínimo possível = 14
+  n= 10000  aleatória    altura BST =     31   mínimo possível = 14
+  n=100000  crescente    altura BST = (omitida: inserção O(n²))   mínimo possível = 17
+  n=100000  decrescente  altura BST = (omitida: inserção O(n²))   mínimo possível = 17
+  n=100000  aleatória    altura BST = (omitida: inserção O(n²))   mínimo possível = 17
+
+Inserção de n IDs pares, busca de todos (+ n ímpares inexistentes) e remoção de 50% aleatórios:
+  cenário      n       árvore       h_ins  rot_ins  recol_ins  visitas(hit/miss)  h_rem  rot_rem  ins(ms)  válida
+  crescente     1000  AVL             10      990          0       8.99 /  9.98     10       95      0.1  sim
+  crescente     1000  Rubro-Negra     17      983       4909       9.41 / 10.39     11      131      0.1  sim
+  decrescente   1000  AVL             10      990          0       8.99 /  9.98     10       83      0.1  sim
+  decrescente   1000  Rubro-Negra     17      983       4909       9.41 / 10.40     10      114      0.1  sim
+  aleatória     1000  AVL             12      680          0       9.22 / 10.21     11      171      0.1  sim
+  aleatória     1000  Rubro-Negra     12      581       2266       9.21 / 10.20     11      169      0.1  sim
+  crescente    10000  AVL             14     9986          0      12.36 / 13.36     14      836      1.0  sim
+  crescente    10000  Rubro-Negra     24     9976      49877      12.89 / 13.88     15      938      0.8  sim
+  decrescente  10000  AVL             14     9986          0      12.36 / 13.36     14      824      1.0  sim
+  decrescente  10000  Rubro-Negra     24     9976      49877      12.89 / 13.88     15      947      0.8  sim
+  aleatória    10000  AVL             16     7129          0      12.56 / 13.56     15     1909      1.6  sim
+  aleatória    10000  Rubro-Negra     16     5868      23289      12.61 / 13.61     16     1867      1.3  sim
+  crescente   100000  AVL             17    99983          0      15.69 / 16.69     17     8226     13.0  sim
+  crescente   100000  Rubro-Negra     31    99969     499846      16.10 / 17.10     19     9186      9.0  sim
+  decrescente 100000  AVL             17    99983          0      15.69 / 16.69     17     8355     12.7  sim
+  decrescente 100000  Rubro-Negra     31    99969     499846      16.10 / 17.10     19     9324      8.9  sim
+  aleatória   100000  AVL             20    69765          0      15.94 / 16.94     19    18694     29.6  sim
+  aleatória   100000  Rubro-Negra     20    58391     232102      15.98 / 16.98     20    18284     21.2  sim
+
+Black Friday — pico de escrita (300000 operações: 135370 inserções, 119753 buscas, 44877 remoções):
+  árvore        n_final  altura  rotações  recolorações  alturas_recalc  visitas/busca  tempo(ms)  válida
+  AVL             90493      18    143683             0         3081971          14.49       39.7  sim
+  Rubro-Negra     90493      27    146115        789953               0          15.34       27.7  sim
+
+Rastreamento — pico de leitura (400000 operações: 124040 inserções, 269894 buscas, 6066 remoções):
+  árvore        n_final  altura  rotações  recolorações  alturas_recalc  visitas/busca  tempo(ms)  válida
+  AVL            117974      17    124254             0         2322085          15.92       30.6  sim
+  Rubro-Negra    117974      30    124332        639462               0          17.59       37.5  sim
+
+CSV gerados em results
