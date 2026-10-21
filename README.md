@@ -1,7 +1,16 @@
-<p id="title" align="center">
-  <a href="#title">
-    <h1 align="center">Amazon Balanced Trees</h1>
-  </a>
+<h1 align="center">
+    <img
+      src="./logo.png"
+      width="80"
+      height="80"
+      alt="project logo"
+    />
+    <br />
+    Amazon Balanced Trees
+</h1>
+
+<p align="center">
+ 📦 Árvores AVL e Rubro-Negra para indexação de encomendas da Black Friday
 </p>
 
 <p align="center">
@@ -11,15 +20,10 @@
   <a aria-label="C++17" href="https://en.cppreference.com/w/cpp/17">
     <img alt="" src="https://img.shields.io/badge/C%2B%2B-17-000000.svg?style=for-the-badge&labelColor=000&logo=cplusplus&logoColor=fff">
   </a>
-  <a aria-label="Disciplina" href="#">
-    <img alt="" src="https://img.shields.io/badge/IMD0039-EDB%20II-000000.svg?style=for-the-badge&labelColor=000">
-  </a>
   <a aria-label="Enjoy My Repos" href="https://github.com/aristofany-herderson?tab=repositories">
     <img alt="" src="https://img.shields.io/badge/Enjoy%20My%20Projects-000000.svg?style=for-the-badge&color=000&logo=github&labelColor=000000&logoColor=fff&logoWidth=20">
   </a>
 </p>
-
-<p align="center">📦 Árvores AVL e Rubro-Negra para o índice de encomendas da Black Friday — Amazon Engineering Challenge</p>
 
 <br>
 
@@ -28,16 +32,12 @@
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
 - [C++17](https://en.cppreference.com/w/cpp/17)
-- [GCC / MinGW-w64](https://www.msys2.org/) (testado com g++ 16.2, MSYS2 UCRT64)
-- [CMake](https://cmake.org/) (opcional)
-
-Dependências do projeto:
-
-- Nenhuma. Apenas a biblioteca padrão do C++. Os algoritmos de balanceamento (rotações, recolorações e casos de correção) foram implementados do zero; `std::set` é usado **somente** como oráculo nos testes.
+- [GCC / MinGW-w64](https://www.msys2.org/)
+- [CMake](https://cmake.org/)
 
 <br>
 
-## 🧑🏻‍💻&nbsp; Começando
+## 🧑🏻‍💻&nbsp; Iniciando o Projeto
 
 Clone o projeto e acesse a pasta
 
@@ -46,7 +46,7 @@ $ git clone https://github.com/aristofany-herderson/amazon-balanced-trees
 $ cd amazon-balanced-trees
 ```
 
-Os executáveis para Windows já estão compilados em `bin/` (linkagem estática, não precisam de DLLs). Para compilar novamente:
+Os executáveis para Windows já estão compilados em `bin/` (estático, não precisam de DLLs). Para compilar novamente:
 
 ```bash
 # Linux, macOS ou Git Bash/MSYS2 no Windows
@@ -84,9 +84,7 @@ Opções extras: `--no-color` desativa as cores ANSI do `arvores`; `comparar` ac
 
 **Resumo:** 📦 Protótipo de índice de identificadores de encomendas usando duas árvores balanceadas, **AVL** e **Rubro-Negra**, com a mesma interface. O programa permite escolher a estrutura em tempo de execução, inserir, remover, buscar, listar em ordem e visualizar a árvore (com as cores dos nós na Rubro-Negra), e conta rotações, recolorações e casos de balanceamento para a análise comparativa.
 
-#### ❔&nbsp; Por que fazer?
-
-Trabalho da Unidade II de **IMD0039 – Estruturas de Dados Básicas II (T05, 2026.2)**. Na Black Friday os IDs de pedidos chegam praticamente em ordem crescente; uma árvore de busca binária comum degenera em lista (altura 10.000 para 10.000 IDs crescentes, medido pelo `comparar`). O objetivo é comparar as duas estratégias de balanceamento com os mesmos dados e recomendar uma delas com base em evidências.
+O objetivo é comparar as duas estratégias de balanceamento com os mesmos dados e recomendar uma delas com base em evidências.
 
 <br />
 
@@ -131,29 +129,27 @@ $ ./bin/arvores --rb
   ✖ 99 não encontrado — árvore inalterada
 ```
 
-A entrada também pode vir de um arquivo (`./bin/arvores --rb < entrada.txt`); nesse caso cada comando lido é ecoado, o que gera um registro completo da sessão. As sessões usadas na apresentação estão em `results/demo/`.
+A entrada também pode vir de um arquivo (`./bin/arvores --rb < entrada.txt`); os usados estão em `results/demo/`.
 
 <br />
 
 #### 🧠&nbsp; Decisões de implementação
 
-| Situação | Decisão |
-| --- | --- |
-| ID repetido | Rejeitado: `insert` retorna `false`, a árvore e os contadores não mudam e o menu avisa |
-| Remover ID inexistente | `remove` retorna `false`, a árvore e os contadores não mudam |
-| Buscar ID inexistente | Informa "não encontrado" e o número de nós visitados |
-| Nó com dois filhos | Substituído pelo sucessor em ordem (mínimo da subárvore direita) nas duas árvores |
-| Altura | Contada em nós: árvore vazia = 0, só a raiz = 1 |
-| Variante da Rubro-Negra | Convencional (CLRS), não a LLRB: ligações rubras podem ficar dos dois lados; no máximo 2 rotações na inserção e 3 na remoção |
-| Folhas da Rubro-Negra | Sentinela `NIL` negra (preta) compartilhada |
-| Entrada inválida no menu | O token é ignorado com aviso; o programa nunca encerra por erro de digitação |
-| Contagem de rotações | Rotação dupla conta como duas rotações simples |
+| Situação                 | Decisão                                                                                                                      |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| ID repetido              | Rejeitado: `insert` retorna `false`, a árvore e os contadores não mudam e o menu avisa                                       |
+| Remover ID inexistente   | `remove` retorna `false`, a árvore e os contadores não mudam                                                                 |
+| Buscar ID inexistente    | Informa "não encontrado" e o número de nós visitados                                                                         |
+| Nó com dois filhos       | Substituído pelo sucessor em ordem (mínimo da subárvore direita) nas duas árvores                                            |
+| Altura                   | Contada em nós: árvore vazia = 0, só a raiz = 1                                                                              |
+| Variante da Rubro-Negra  | Convencional (CLRS), não a LLRB: ligações rubras podem ficar dos dois lados; no máximo 2 rotações na inserção e 3 na remoção |
+| Folhas da Rubro-Negra    | Sentinela `NIL` negra (preta) compartilhada                                                                                  |
+| Entrada inválida no menu | O token é ignorado com aviso; o programa nunca encerra por erro de digitação                                                 |
+| Contagem de rotações     | Rotação dupla conta como duas rotações simples                                                                               |
 
 **AVL** (`src/AVLTree.cpp`): recursiva; cada nó guarda sua altura. Na volta da recursão, `rebalance()` recalcula a altura e, se `|fb| = 2`, aplica um dos casos com a nomenclatura da disciplina: LL (rotação simples à direita), RR (simples à esquerda), LR (dupla à direita: esquerda no filho e direita no nó) ou RL (dupla à esquerda: direita no filho e esquerda no nó). Convenções iguais às da aula: `fb = h(esq) − h(dir)` e `h = max(h_esq, h_dir) + 1`, com folha de altura 1.
 
 **Rubro-Negra** (`src/RBTree.cpp`): iterativa, com ponteiro para o pai e sentinela. `insertFixup()` trata os casos tio rubro, triângulo e linha; `removeFixup()` trata os quatro casos clássicos da remoção. A variante LLRB (caída para a esquerda) também foi vista em aula; a convencional foi escolhida por ser a usada em `std::map`, `java.util.TreeMap` e no kernel Linux, e porque, sem a regra de inclinação à esquerda, dispensa as rotações extras que a LLRB faz só para manter as ligações rubras à esquerda.
-
-Os exemplos das aulas foram reproduzidos no programa com o mesmo resultado: a inserção de `{1,2,3,10,4,5,9,7,8,6}` na AVL e o `RemoverAVL(8,T)`, que gera uma rotação LL seguida de uma RR.
 
 **Validação**: `validate()` confere ordem de busca, `|fb| ≤ 1` e alturas armazenadas (AVL); raiz negra, ausência de rubro com filho rubro, mesma altura negra em todos os caminhos e consistência dos ponteiros pai (Rubro-Negra).
 
@@ -190,32 +186,26 @@ results/   CSV e saídas usados na apresentação
 
 Altura após inserir 100.000 IDs (mínimo possível: 17):
 
-| Ordem | AVL | Rubro-Negra |
-| --- | ---: | ---: |
-| Crescente | 17 | 31 |
-| Decrescente | 17 | 31 |
-| Aleatória | 20 | 20 |
+| Ordem       | AVL | Rubro-Negra |
+| ----------- | --: | ----------: |
+| Crescente   |  17 |          31 |
+| Decrescente |  17 |          31 |
+| Aleatória   |  20 |          20 |
 
 Simulação de cargas com IDs sequenciais (mesma sequência de operações nas duas):
 
-| Carga | Métrica | AVL | Rubro-Negra |
-| --- | --- | ---: | ---: |
-| Black Friday (45% ins., 40% busca, 15% rem.) | altura · nós por busca | 18 · 14,49 | 27 · 15,34 |
-| | rotações · escritas de metadados | 143.683 · 3,08 mi | 146.115 · 0,79 mi |
-| Rastreamento (8% ins., 90% busca, 2% rem.) | altura · nós por busca | 17 · 15,92 | 30 · 17,59 |
-| | rotações · escritas de metadados | 124.254 · 2,32 mi | 124.332 · 0,64 mi |
+| Carga                                        | Métrica                          |               AVL |       Rubro-Negra |
+| -------------------------------------------- | -------------------------------- | ----------------: | ----------------: |
+| Black Friday (45% ins., 40% busca, 15% rem.) | altura · nós por busca           |        18 · 14,49 |        27 · 15,34 |
+|                                              | rotações · escritas de metadados | 143.683 · 3,08 mi | 146.115 · 0,79 mi |
+| Rastreamento (8% ins., 90% busca, 2% rem.)   | altura · nós por busca           |        17 · 15,92 |        30 · 17,59 |
+|                                              | rotações · escritas de metadados | 124.254 · 2,32 mi | 124.332 · 0,64 mi |
 
 Em 7 execuções, a Rubro-Negra foi de 4% a 30% mais rápida na carga de escrita e a AVL de 7% a 20% mais rápida na carga de leitura. Os tempos variam entre máquinas; as demais métricas são determinísticas. Saída completa em `results/saida_comparacao.txt`.
 
 **Recomendação:** Rubro-Negra para o registro e a baixa de encomendas durante a Black Friday (carga dominada por escrita); AVL para um índice de rastreamento dominado por consultas. Os dados confirmam a orientação vista em aula: quando a busca predomina, AVL; quando inserção e remoção predominam, Rubro-Negra.
 
 <br />
-
-#### 🎨&nbsp; Apresentação
-
-A apresentação técnica (18 slides, exportada em PDF) usa a paleta da Amazon: laranja `#FF9900`, azul-marinho `#232F3E`, azul `#146EB4`, dourado-claro `#FEBD69`, branco e preto.
-
-<br>
 
 ## 🧑🏻&nbsp; Autor
 
